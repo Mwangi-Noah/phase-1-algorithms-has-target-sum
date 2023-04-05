@@ -1,13 +1,30 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  //I will need to create a function hasTargetSum which checks whether any two values within an input array add up to the target value entered
+  //first iterate over the array and identify what number needs to be added to yield target
+  for (let i = 0; i < array.length; i++) {
+    let addOn = target - array[i];
+    //Having got this value, we need to use the if statement to determine whether the array contains it. We need to begin with the next number (i+1)
+    for (let x = i + 1; x < array.length; x++) {
+      if (array[x] === addOn) return true;
 }
+  }
+  return false;
+}
+ 
 
 /* 
-  Write the Big O time complexity of your function here
+  First loop = n steps in the loop => O(n)
+  second loop = n*n steps in the loop => O(n*n)
 */
 
 /* 
-  Add your pseudocode here
+           pseudocode
+  Accept array and target number as input.
+  Iterate ove the values within the array
+  for each number, determine the value that will add up to the target value.
+  Iterate once again over the entire array and check whether this add up value exist, if it does return true 
+  else
+  return false
 */
 
 /*
